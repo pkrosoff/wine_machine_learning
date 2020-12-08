@@ -122,9 +122,73 @@
                         <br>
                         <p>Ultimately this NLP project ended with 35% accuracy rating.</p>
                         <br>
-                    </div>
+
+                        <!-- NLP Pricing -->
+
+                        <h4 class="my-3">Predicting Wine Pricing by Length of Review</h4>
+                        <br>
+                        <p>
+                            Could the length of a wine review be indicative of the price point of a particular wine?
+                                Following a similiar formula as with the wine score NLP, we set out to answer whether or not
+                                machine learning could be used to predict the price of a wine based on its description.
+                        </p>
+                        <br>
+                        <p>
+                            The same dataset, as used for the points model was imported into Pandas for the intial cleaning.
+                            The difference was all but the description column and the price column were dropped from the data frame.
+                        </p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/wineprice_desc_price_code.png"/>
+                        </div>
+                        <br>
+                        <p>
+                            Then all duplicates and null values were dropped from the data frame.
+                        </p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/wineprice_null.png"/>
+                        </div>
+                        <br>
+                        <p>
+                            For the NLP model Pipeline to function, a description length column was created which is an integer output representative of the word length of the description.
+                        </p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/wineprice_descriptionLength_code.jpg"/>
+                        </div>
+                        <br>
+                        <p> 
+                            Differing from the wine points model above, the final piece of data cleaning was to create bins for the price points. In all five separate binning functions were created which would be commented on and off each time the code is run in order to show differnt ranges of wine prices to feed the model.
+                            
+                        </p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/binning_code.png"/>
+                        </div>
+                        <br>
+                        <p>The binning function also outputted a new column called 'price_grouped' which was representative of each data point's respective bin based on their price range.</p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/binning_code.png"/>
+                        </div>
+                        <br>
+                        <p>In order to gain insight into the distribution of the data, the bins were visualized through histograms which would be outputted after each individual binning function was ran.</p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/wineprice_bin_3_histogram.jpg" width="700"/>
+                        </div>
+                        <br>
+                        <p>
+                            The histograms all tell a similar story, that the price data is skewed heavily to the left, which can be seen as the mean of the ‘price_grouped’ column for all binning function is less than 2.
+                        </p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/wineprice_mean_code.jpg"/>
+                        </div>
+
+
+                    </div>                  
                 </div>
         <!-- </section> -->
+                
+            
+
+          
+            
 
 
        <!-- Bootstrap core JS-->
