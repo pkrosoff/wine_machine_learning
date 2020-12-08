@@ -53,37 +53,77 @@
         <!-- Services-->
         <!-- <section class="page-section" id="services"> -->
             <div class="container">
-                <div class="text-center">
-                    <h2 class="text-center">main header</h2>
-                    <h3 class="section-subheading text-muted">mean header subtext</h3>
+                <!-- <div class="text-center"> -->
+                    <!-- <h2 class="text-center">main header</h2> -->
+                    <!-- <h3 class="section-subheading text-muted">mean header subtext</h3> -->
+                <!-- </div> -->
+                    <!-- <div class="col-md-12"> -->
+                        <h4 class="my-3">Predicting Rating by Length of Review</h4>
+                        <!-- <p class="text-muted">Predicting Rating by Length of Review</p> -->
+                        
+                        <p>Can the length of a review be relative to the final score a wine receives? 
+                            We decided to take a deep look into this question and determine how likely it is that the length of the review has any consistency 
+                            in relation to the score. This example of natural language processing was heavily inspired by the Yelp reviews activity which were 
+                            comparing only positive and negative reviews where here we have a larger range of options as opposed to a binary result.</p>
+                        <br>
+                        <div class="text-center">
+                            <img src="assets/img/nlp/1PandasToSparkDF.PNG" class="aligncenter">
+                        </div>
+                        <br>
+                            <p>Originally the data was imported using pyspark but this caused issues when using the points column later on in the project.
+                            The description column would be placed in the labels column with the points causing more features than wanted. 
+                            With Kelly’s help we were able to resolve this issue by first putting that data into a Pandas dataframe and cleaning it to only hold the 
+                            columns that were needed.</p>
+                        <br>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/2Regex.PNG"/>
+                        </div>
+                        <br>
+                        <p>We were able to covert the pandas dataframe into a pyspark dataframe so that we could use regexp_place and run further processing. 
+                            Regexp_replace removes any non-alphanumeric characters to further clean the data. 
+                            Wine is international and has many words that use characters from languages that made it difficult to process in the format we had it in to 
+                            begin with.</p>
+                        <br>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/3LengthColumn.PNG"/>
+                        </div>
+                        <br>
+                        <p>Here we created the length column to hold the number of words in each review.</p>
+                        <br>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/4IsNull.PNG"/>
+                        </div>
+                        <br>
+                        <p> When further trying to learn the data we were having issues with any null spaces which led to more cleaning in the data. Before creating the pyspark dataframe we dropped an nulls in the Panda dataframe for easy conversion.
+                            Here we imported isnull for pyspark to check the columns and confirm it was clean and ready to teach.</p>
+                        <br>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/5Pipeline.PNG"/>
+                        </div>
+                        <br>
+                        <p>Now that the data is clean without any special characters or nulls we are ready to create the pipeline.</p>
+                        <br>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/6Labels.PNG"/>
+                        </div>
+                        <br>
+                        <p>There are twenty one unique scores in the dataset with the most common being 88 points which was converted into a 0 label to represent the frequency,
+                            with 100 (the highest score) being assigned a 20 label. </p>
+                        <br>
+                        <div class="text-left">
+                        <img src="assets/img/nlp/7NB.PNG" width="1250"/>
+                        </div>
+                        <br>
+                        <p>Next, we ran Naive Bayes and fit the training data then transformed the testing data.</p>
+                        <br>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/8Accuracy.PNG"/>
+                        </div>
+                        <br>
+                        <p>Ultimately this NLP project ended with 35% accuracy rating.</p>
+                        <br>
+                    </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <!-- <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
-                        <!-- </span> -->
-                        <h4 class="my-3">header left column</h4>
-                        <p class="text-muted">text left column</p>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span> -->
-                        <h4 class="my-3">header center column</h4>
-                        <p class="text-muted">text center column</p>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span> -->
-                        <h4 class="my-3">header right column</h4>
-                        <p class="text-muted">text right column</p>
-                    </div>
-                </div>
-            </div>
         <!-- </section> -->
 
 
