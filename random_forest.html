@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Wine Machine Learning</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- wine favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <!-- <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="" /></a> -->
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Visualizations
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="regression.html">Regression Model</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="classification.html">Classification Model</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="nlp.html">NLP Model</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">Home</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+         <!-- Masthead-->
+         <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Random Forest Model</div>
+                <!-- <div class="masthead-heading text-uppercase">Machine Learning with Wine</div> -->
+                <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#about">How we got here</a> -->
+            </div>
+        </header>
+        <!-- Services-->
+        <!-- <section class="page-section" id="services"> -->
+            <div class="container">
+                
+                <!-- <div class="row text-center"> -->
+                    <div class="col-md-12">
+                        <p><h3>Data</h3><br>
+I used two datasets; <a href="data/winequality-red.csv">red</a> and <a href= "data/winequality-white.csv">white</a> wine quality combined, from UCI's database. I brought the data into a jupyter notebook and appended the datasets together after adding another column containing the "color" value for the wine, white being 0 and red being 1.<br><br>
+<img src="assets/img/data_vis/pk_vis_1.png" width="1100" height="auto"><br><br>
+<h3>Exploratory Analysis</h3><br>
+I wanted to identify how the features interacted with each other for both red and white wine and get an idea of what I could expect from this model. I made some heatmaps to explore the relaionships between different features.
+<br><br>
+<img src="assets/img/data_vis/heat_allwines.png" width="600"><br><img src="assets/img/data_vis/heat_reds.png" width="500"><img src="assets/img/data_vis/heat_white.png" width="500">
+<br><br>
+I noticed the color had a strong relationship to a couple features so I made bar charts to visualize the actual data between those.<br><br>
+<img src="assets/img/data_vis/bar_dioxides.png" width="500"><img src="assets/img/data_vis/bar_chlorides.png" width="500"><br><br>
+<h3>Machine Learning</h3><br>
+I defined the target feature (color of wine) and then dropped color from the test dataset. I ran a train_test_split function using the data without the color classification to test on ("data"), as well as the data that still included the target metric ("target") which was used to train the model. <br><br>
+I used the DecisionTreeCLassifier() and fit the training dataset to the model.
+I then used a RandomForestCLassifier() function to fit the train and test data using 100 estimators. The score of both tests were very high. I then printed out each feature and its relative importance in the model. <br><br>
+<img src="assets/img/data_vis/models_test.png" width="800" height="auto"><br><br>
+I plotted the relative importances on a horizontal bar chart.<br><br>
+<img src="assets/img/data_vis/horizontal_bar.png" width="500">
+<br><br>
+According to the model, there are two highly prominent features that correlate to wine color, and those are total sulfur dioxides and chlorides.<br><br>
+<img src="assets/img/data_vis/feature_importance1.png"><br>
+<br>
+The model performed very well, in part becuase there were a lot of features, and two of them had high relative importance. This leads me to believe there are relatively large differences in the chemical makeup between red and white wine on an elemental level.<br><br>
+<img src="assets/img/data_vis/f1_scores.png" width="600"><br><br>
+I would have liked to cross validate this model, but since the scores were quite high to begin with, it made me more interested in finding a more challenging model. I would be interested in trying an analysis of predicting a continuous variable such as total sulfure dioxide from other continous variables such as chloride and acidity. <br><br></p>
+                    </div>
+                </div>
+            </div>
+        <!-- </section> -->
+
+
+       <!-- Bootstrap core JS-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+       <!-- Third party plugin JS-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+       <!-- Contact form JS-->
+       <script src="assets/mail/jqBootstrapValidation.js"></script>
+       <script src="assets/mail/contact_me.js"></script>
+       <!-- Core theme JS-->
+       <script src="js/scripts.js"></script>
+   </body>
+</html>

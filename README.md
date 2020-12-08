@@ -24,12 +24,19 @@ What to accomplish today:<br>
 Answer the following to tell the story of your machine learning model:<br>
 <br>
 Which model type are you using?<br>
+Random Forest Model<br>
 Which dataset are you using?<br>
+Two datasets appended, the red and white wine quality data from UCI<br>
 Which platform are you using to analyze the data? jupyter vs colab vs ..<br>
+Jupyter Notebook <br>
 How/did you clean the data or prepare the data?<br>
+I imported both csvs, added a column for color and marked red wines as 1 and white wines as 0<br>
 How did you fit the model to the data.<br>
-Which features were you looking at specifically in relation ot which other features (if applicable)?<br>
+I defined the targer feature (color of wine) and then dropped color from the dataset. I ran a train test split function using the data without the color classification to test on, and the data that included the target which I used to trsin the model. I used the DecisionTreeCLassifier() and fit the training dataset to the model (10% of the data), then checked the score of the test dataset. I then used a RandomForestCLassifier() function to fit the train and test data into using 100 estimators. I printed out each feature and its relative importance in the model. I plotted the relative importances on a horizontal bar chart.<br>
+Which features were you looking at specifically in relation to which other features (if applicable)?<br>
+I was looking at the relative importance of each feature in determining the color of the wine.<br>
 How did the model perform?<br>
+The model performed very well becuase there were a lot of features, and two of them had high relative importance.<br>
     When applicable identify the following:<br><ol>
    <li> Model accuracy in predicting or classifying target</li>
    <li> Model precision </li>
