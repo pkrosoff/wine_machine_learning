@@ -54,3 +54,36 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
+
+// ---------Global scores and prices chart------------------------------------------------
+Highcharts.chart('wine_price', {
+
+    title: {
+        text: 'Avergae Global Wine Scores vs. Prices 2017'
+    },
+
+    subtitle: {
+        text: 'Source: Wine Enthusiast'
+    },
+
+    data: {
+        csv: document.getElementById('csv').innerHTML
+    },
+
+    plotOptions: {
+        series: {
+            marker: {
+                enabled: false
+            }
+        }
+    },
+
+    series: [{
+        lineWidth: 1
+    }, {
+        type: 'areaspline',
+        color: '#c4392d',
+        negativeColor: '#5679c4',
+        fillOpacity: 0.5
+    }]
+});
