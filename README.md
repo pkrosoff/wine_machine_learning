@@ -18,33 +18,33 @@ Questions:
 -	Can wine type (red or white) be predicted based on chemical makeup?
 -	Can wine price be predicted by review length/content, country, “province”, or variety?
 
-
-What to accomplish today:
-
-Answer the following to tell the story of your machine learning model:
-
-Which model type are you using?
-Which dataset are you using?
-Which platform are you using to analyze the data? jupyter vs colab vs ..
-How/did you clean the data or prepare the data?
-How did you fit the model to the data.
-Which features were you looking at specifically in relation ot which other features (if applicable)?
-How did the model perform?
-    When applicable identify the following:
-    1. Model accuracy in predicting or classifying target
-    2. Model precision 
-    3. r2 score
-    4. f1 score
-    5. auc and roc
-    6. MAE, MSE, etc
-Did you cross validate your model?
-Did you use hyperparameter optimization?
-
-How do we want our results to look? Meaning: Which metrics are important to identify and display, which visuals?
-Comment your code, and make it concise when possible!.
-
-What were some issues with your model, platform, data that you would like to improve?
-What would you look into next given all the time and knowledge in the world?
+<br><br>
+What to accomplish today:<br>
+<br>
+Answer the following to tell the story of your machine learning model:<br>
+<br>
+Which model type are you using?<br>
+Which dataset are you using?<br>
+Which platform are you using to analyze the data? jupyter vs colab vs ..<br>
+How/did you clean the data or prepare the data?<br>
+How did you fit the model to the data.<br>
+Which features were you looking at specifically in relation ot which other features (if applicable)?<br>
+How did the model perform?<br>
+    When applicable identify the following:<br><ol>
+   <li> Model accuracy in predicting or classifying target</li>
+   <li> Model precision </li>
+    <li> r2 score</li>
+    <li> f1 score </li>
+    <li> auc and roc </li>
+    <li> MAE, MSE, etc</li></ol><br>
+Did you cross validate your model?<br>
+Did you use hyperparameter optimization?<br>
+<br><br>
+How do we want our results to look? Meaning: Which metrics are important to identify and display, which visuals?<br><br>
+Comment your code, and make it concise when possible!.<br>
+<br><br>
+What were some issues with your model, platform, data that you would like to improve?<br>
+What would you look into next given all the time and knowledge in the world?<br>
 
 
 
