@@ -18,12 +18,17 @@ Questions:
 -	Can wine type (red or white) be predicted based on chemical makeup?
 -	Can wine price be predicted by review length/content, country, “province”, or variety?
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 82f3bc198cdb451810aee34531f5639a8dff777a
 <br><br>
 What to accomplish today:<br>
 <br>
 Answer the following to tell the story of your machine learning model:<br>
 <br>
 Which model type are you using?<br>
+<<<<<<< HEAD
 Random Forest Model<br>
 Which dataset are you using?<br>
 Two datasets appended, the red and white wine quality data from UCI<br>
@@ -37,6 +42,14 @@ Which features were you looking at specifically in relation to which other featu
 I was looking at the relative importance of each feature in determining the color of the wine.<br>
 How did the model perform?<br>
 The model performed very well becuase there were a lot of features, and two of them had high relative importance.<br>
+=======
+Which dataset are you using?<br>
+Which platform are you using to analyze the data? jupyter vs colab vs ..<br>
+How/did you clean the data or prepare the data?<br>
+How did you fit the model to the data.<br>
+Which features were you looking at specifically in relation ot which other features (if applicable)?<br>
+How did the model perform?<br>
+>>>>>>> 82f3bc198cdb451810aee34531f5639a8dff777a
     When applicable identify the following:<br><ol>
    <li> Model accuracy in predicting or classifying target</li>
    <li> Model precision </li>
@@ -52,6 +65,9 @@ Comment your code, and make it concise when possible!.<br>
 <br><br>
 What were some issues with your model, platform, data that you would like to improve?<br>
 What would you look into next given all the time and knowledge in the world?<br>
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 82f3bc198cdb451810aee34531f5639a8dff777a

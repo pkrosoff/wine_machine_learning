@@ -57,14 +57,14 @@
                 <!-- <div class="row text-center"> -->
                     <div class="col-md-12">
                         <p><h3>Data</h3><br>
-I used two datasets; <a href="data/winequality-red.csv">red</a> and <a href= "data/winequality-white.csv">white</a> wine quality combined, from UCI's database. I brought the data into a jupyter notebook and appended the datasets together after adding another column containing the "color" value for the wine, white being 0 and red being 1.<br><br>
+I used two datasets; <a href="data/winequality-red.csv">red</a> and <a href= "data/winequality-white.csv">white</a> wine quality combined, from UCI's database. This data lists the measurements of several elements in a particular wine varietal in Portugal. There are both red and white versions of this partcular wine. I brought the data into a jupyter notebook and appended the datasets together after adding another column containing the "color" value for the wine, white being 0 and red being 1.<br><br>
 <img src="assets/img/data_vis/pk_vis_1.png" width="1100" height="auto"><br><br>
 <h3>Exploratory Analysis</h3><br>
 I wanted to identify how the features interacted with each other for both red and white wine and get an idea of what I could expect from this model. I made some heatmaps to explore the relaionships between different features.
 <br><br>
 <img src="assets/img/data_vis/heat_allwines.png" width="600"><br><img src="assets/img/data_vis/heat_reds.png" width="500"><img src="assets/img/data_vis/heat_white.png" width="500">
 <br><br>
-I noticed the color had a strong relationship to a couple features so I made bar charts to visualize the actual data between those.<br><br>
+I noticed the color had a strong relationship to a couple features so I made histograms to visualize more specific relationships between those wines.<br><br>
 <img src="assets/img/data_vis/bar_dioxides.png" width="500"><img src="assets/img/data_vis/bar_chlorides.png" width="500"><br><br>
 <h3>Machine Learning</h3><br>
 I defined the target feature (color of wine) and then dropped color from the test dataset. I ran a train_test_split function using the data without the color classification to test on ("data"), as well as the data that still included the target metric ("target") which was used to train the model. <br><br>
