@@ -1,73 +1,33 @@
 # wine_machine_learning
-
+<h4>Project Proposal</h4>
+<br>
 Group Members: Kelly Shull, Jarrod Williams, Phoebe Rosoff, and Justan Plumlee
 
-Tools: Matplotlib, Pandas, HTML/CSS/Bootstrap, JavaScript Plotly
+Tools: Matplotlib, Pandas, HTML/CSS/Bootstrap, JavaScript Plotly, Google Colab
 
-Using the wine magazine review data predict price and class based on words in the review.
+Use the wine magazine review data to predict price and class based on words in the review.
 
 https://www.kaggle.com/zynicide/wine-reviews?select=winemag-data_first150k.csv
 
-Use wine quality dataset for regression analysis on to predict quality based on chemical makeup.
+Use wine quality dataset for regression analysis to classify wine type (red or white) based on chemical makeup.
 
 https://archive.ics.uci.edu/ml/datasets/wine+quality
 
-Questions:
+Questions we would like to answer:
 
 -	Can wine score be predicted by review length/content?
 -	Can wine type (red or white) be predicted based on chemical makeup?
 -	Can wine price be predicted by review length/content, country, “province”, or variety?
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 82f3bc198cdb451810aee34531f5639a8dff777a
 <br><br>
-What to accomplish today:<br>
+<h4>Logistic Regression</h4>
 <br>
-Answer the following to tell the story of your machine learning model:<br>
+Using data from UCI's wine dataset analyzing the chemical breakdown of wines from Portugal's Vinho Verde region, we set out to design a model that could predict wine type (white or red) based on chemical analyses. 
+The regression model was able to predict with 88% accuracy if a wine would be classified as red or white.
+Using cross-validation and hyperparameter optimization methods, we were able to improve the model to 93% accuracy.
+The AUC of the model was 0.95.
 <br>
-Which model type are you using?<br>
-<<<<<<< HEAD
-Random Forest Model<br>
-Which dataset are you using?<br>
-Two datasets appended, the red and white wine quality data from UCI<br>
-Which platform are you using to analyze the data? jupyter vs colab vs ..<br>
-Jupyter Notebook <br>
-How/did you clean the data or prepare the data?<br>
-I imported both csvs, added a column for color and marked red wines as 1 and white wines as 0<br>
-How did you fit the model to the data.<br>
-I defined the targer feature (color of wine) and then dropped color from the dataset. I ran a train test split function using the data without the color classification to test on, and the data that included the target which I used to trsin the model. I used the DecisionTreeCLassifier() and fit the training dataset to the model (10% of the data), then checked the score of the test dataset. I then used a RandomForestCLassifier() function to fit the train and test data into using 100 estimators. I printed out each feature and its relative importance in the model. I plotted the relative importances on a horizontal bar chart.<br>
-Which features were you looking at specifically in relation to which other features (if applicable)?<br>
-I was looking at the relative importance of each feature in determining the color of the wine.<br>
-How did the model perform?<br>
-The model performed very well becuase there were a lot of features, and two of them had high relative importance.<br>
-=======
-Which dataset are you using?<br>
-Which platform are you using to analyze the data? jupyter vs colab vs ..<br>
-How/did you clean the data or prepare the data?<br>
-How did you fit the model to the data.<br>
-Which features were you looking at specifically in relation ot which other features (if applicable)?<br>
-How did the model perform?<br>
->>>>>>> 82f3bc198cdb451810aee34531f5639a8dff777a
-    When applicable identify the following:<br><ol>
-   <li> Model accuracy in predicting or classifying target</li>
-   <li> Model precision </li>
-    <li> r2 score</li>
-    <li> f1 score </li>
-    <li> auc and roc </li>
-    <li> MAE, MSE, etc</li></ol><br>
-Did you cross validate your model?<br>
-Did you use hyperparameter optimization?<br>
-<br><br>
-How do we want our results to look? Meaning: Which metrics are important to identify and display, which visuals?<br><br>
-Comment your code, and make it concise when possible!.<br>
-<br><br>
-What were some issues with your model, platform, data that you would like to improve?<br>
-What would you look into next given all the time and knowledge in the world?<br>
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 82f3bc198cdb451810aee34531f5639a8dff777a
+<h4>Random Forest</h4>
+We used a random forest classifier to identify relative feature importance in classifying whether a wine was red or white. We looked at the differences in frequency of data for a couple of the more relatively important features such as total sulfur dioxide and chlorides. The model was very accurate possibly due to the large amount of features, and the relative difference in chemical makeup between the red and white wines of this variety.
+<br>
+<h4>Natural Language Processing</h4>
+Using over 130,000 rows of data from the wine enthusiast Winemag.com reviews via kaggl.com, we evaluated if a model could predict the wine's score and which price range it fell into based on review length. After cleaning and fitting the data, and training the models, The wine score model came out with an accuracy of about 36%. The price range model was evaluated with varying sizes of price bins, and four out of the five bin sizes predicted price with over 70% accuracy.
