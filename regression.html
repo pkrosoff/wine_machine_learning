@@ -57,179 +57,245 @@
     
             <div class="container">
                 <div class="text-center">
-                    <h2 class="text-center">Analyses of Wine Prices and Scores</h2>
+                    <h2 class="text-center">Logistic Regression</h2>
+                    
                     <h3 class="section-subheading text-muted"></h3>
+                    <p>Using data from UCI's wine dataset analyzing the chemical breakdown of wines from Portugal's Vinho Verde region, we set out to design a model that could predict wine type (white or red) based on chemical analyses. </p>
+                    <img src="assets/img/VinhoVerde02.png" alt="Vinho Verde Map" width="250" height="300" class='center'>
                 </div>
                
                 </div>
-                <div class="container">
-                    
+                <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="text-center">
+                        <br>
+                        <h3 class="section-subheading text-muted">Wine Type Breakdown</h3>
+                        <p>A look at the data shows that there are more white wines than red wines in our dataset. The Vinho Verde region is primarily known for light, fruity and slightly effervescent white wines so this is to be expected, however, we were somewhat concerned about an unblanced dataset.</p>
                     </div>
-                   
-                    </div>
-            </div>
-        <!-- </section> -->
-            <div id="wine_price" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+            <div id="bar" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
-            <pre id="csv" style="display:none">country,price,points
-                Argentina,25,87
-                Armenia,15,88
-                Australia,35,89
-                Austria,31,90
-                Bosnia and Herzegovina,13,87
-                Brazil,24,85
-                Bulgaria,15,88
-                Canada,36,89
-                Chile,21,86
-                China,18,89
-                Croatia,25,87
-                Cyprus,16,87
-                Czech Republic,24,87
-                England,52,92
-                France,41,89
-                Georgia,19,88
-                Germany,42,90
-                Greece,22,87
-                Hungary,41,89
-                India,13,90
-                Israel,32,88
-                Italy,40,89
-                Lebanon,31,88
-                Luxembourg,23,89
-                Macedonia,16,87
-                Mexico,27,85
-                Moldova,17,87
-                Morocco,20,89
-                New Zealand,27,88
-                Peru,18,84
-                Portugal,26,88
-                Romania,15,86
-                Serbia,25,88
-                Slovakia,16,87
-                Slovenia,25,88
-                South Africa,25,88
-                Spain,28,87
-                Switzerland,85,89
-                Turkey,25,88
-                US,37,89
-                Ukraine,9,84
-                Uruguay,26,87
-                
-            ,
-            </pre>
-            <!-- <div class="container">
-                <div class="text-center">
-                    <h2 class="text-center">Analyses of Wine Scores</h2>
-                    <h3 class="section-subheading text-muted"></h3>
-                </div>
-                <div class="row text-center"> 
-                    <div class="col-md-4"> 
+                            
+            <br>
+            <br>
+            
+            
+            <div class="text-center">
+                <br>
+                <h3 class="section-subheading">Dataset Features</h3>
+                <p>Luckily for us the dataset was primarily clean and filled with continous (numerical) data. The chemical makeup of white wines and red wines are essentially identical which makes this data ideal for binary classification using a logistic regression model.</p>
                         
-                        <!-- <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i> -->
-                        <!-- </span> -->
-                        <!-- <h4 class="my-3">header left column</h4>
-                        <p class="text-muted">text left column</p> -->
+                        
+                        <table border="1", class='center'>
+                        <style type="text/css">
 
-                            <style type="text/css">
-                            .tg  {border-collapse:collapse;border-color:#C44D58;border-spacing:0;}
-                            .tg td{background-color:#F9CDAD;border-color:#C44D58;border-style:solid;border-width:1px;color:#002b36;
+                            .center  {border-collapse:collapse;border-color:#C44D58;border-spacing:0;}
+                            .center td{background-color:#F9CDAD;border-color:#C44D58;border-style:solid;border-width:1px;color:#002b36;
                             font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-                            .tg th{background-color:#FE4365;border-color:#C44D58;border-style:solid;border-width:1px;color:#fdf6e3;
+                            .center th{background-color:#FE4365;border-color:#C44D58;border-style:solid;border-width:1px;color:#fdf6e3;
                             font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-                            .tg .tg-0lax{text-align:left;vertical-align:top}
+                            .center .left-0lax{text-align:left;vertical-align:top}
                             </style>
-                            <table class="tg">
-                            <thead>
-                            <tr>
-                            <th class="tg-0lax">country</th>
-                            <th class="tg-0lax">price</th>
-                            <th class="tg-0lax">points</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                            <td class="tg-0lax">Switzerland</td>
-                            <td class="tg-0lax">85.29</td>
-                            <td class="tg-0lax">89</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">England</td>
-                            <td class="tg-0lax">51.68</td>
-                            <td class="tg-0lax">92</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">Germany</td>
-                            <td class="tg-0lax">42.26</td>
-                            <td class="tg-0lax">90</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">France</td>
-                            <td class="tg-0lax">41.14</td>
-                            <td class="tg-0lax">89</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">Hungary</td>
-                            <td class="tg-0lax">40.65</td>
-                            <td class="tg-0lax">89</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">Italy</td>
-                            <td class="tg-0lax">39.66</td>
-                            <td class="tg-0lax">89</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">US</td>
-                            <td class="tg-0lax">36.57</td>
-                            <td class="tg-0lax">89</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">Canada</td>
-                            <td class="tg-0lax">35.71</td>
-                            <td class="tg-0lax">89</td>
-                            </tr>
-                            <tr>
-                            <td class="tg-0lax">Australia</td>
-                            <td class="tg-0lax">35.44</td>
-                            <td class="tg-0lax">89</td>
-                            </tr>
-                            </tbody>
+                          
+                        </style>
+                       
+                        <thead>
+                          <tr>
+                            <th class="tg-0pky">Feature Name</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="tg-0pky">fixed acidity</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">volatile acidity</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">citric acid</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">residual sugar</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">chlorides</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">free sulfur dioxide</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">total sulfur dioxide</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">density</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">pH</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">sulphates</td>
+                          </tr>
+                          <tr>
+                            <td class="tg-0pky">alcohol</td>
+                          </tr>
+                          
+                        </tbody>
                             </table>
                         </div>
 
-                    
                     </div>
-                    <div class="col-md-4">
-                        <!-- <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-                        </span> -->
-                        <h4 class="my-3">header center column</h4>
-                        <p class="text-muted">text center column</p>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- <span class="fa-stack fa-4x">
-                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-                        </span> -->
-                        <h4 class="my-3">header right column</h4>
-                        <p class="text-muted">text right column</p>
+                    <br>
+                    <br>
+                    <div class="text-center">
+                        <br>
+                        <h2 class="text-center">Results of the Model</h2>
+                        <p></p>
+                        <br>
+                        <br>
+                        <h5 class="section-subheading text-muted">Classification Report</h5>
+                        <p>Our model returned an accuracy of 88%.</p>
+                        <table border="1" class="center">
+                            <style type="text/css">
 
-                        
+                                .center  {border-collapse:collapse;border-color:#C44D58;border-spacing:0;}
+                                .center td{background-color:#F9CDAD;border-color:#C44D58;border-style:solid;border-width:1px;color:#002b36;
+                                font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+                                .center th{background-color:#FE4365;border-color:#C44D58;border-style:solid;border-width:1px;color:#fdf6e3;
+                                font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+                                .center .center-0lax{text-align:center;vertical-align:top}
+                                </style>
+                            <thead>
+                              <tr style="text-align: right;">
+                                <th></th>
+                                <th>precision</th>
+                                <th>recall</th>
+                                <th>f1-score</th>
+                                <th>support</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th>0.0</th>
+                                <td>0.79</td>
+                                <td>0.73</td>
+                                <td>0.76</td>
+                                <td>499.00</td>
+                              </tr>
+                              <tr>
+                                <th>1.0</th>
+                                <td>0.91</td>
+                                <td>0.94</td>
+                                <td>0.92</td>
+                                <td>1450.00</td>
+                              </tr>
+                              <tr>
+                                <th>accuracy</th>
+                                <td>0.88</td>
+                                <td>0.88</td>
+                                <td>0.88</td>
+                                <td>0.88</td>
+                              </tr>
+                              <tr>
+                                <th>macro avg</th>
+                                <td>0.85</td>
+                                <td>0.83</td>
+                                <td>0.84</td>
+                                <td>1949.00</td>
+                              </tr>
+                              <tr>
+                                <th>weighted avg</th>
+                                <td>0.88</td>
+                                <td>0.88</td>
+                                <td>0.88</td>
+                                <td>1949.00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <br>
+                          <br>
+
+                        <h5 class="section-subheading text-muted">Confusion Matrix</h5>
+                        <p>Here you can see the model was good at classifying wines that were not white.</p>
+                        <table border="1", class='center'>
+                            <style type="text/css">
+
+                                .center  {border-collapse:collapse;border-color:#0000;border-spacing:0;}
+                                .center td{background-color:#ffffff;border-color:#000000;border-style:solid;border-width:1px;color:#002b36;
+                                font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+                                .center th{background-color:#4f76a3;border-color:#000000;border-style:solid;border-width:1px;color:#fdf6e3;
+                                font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+                                .center .center-0lax{text-align:center;vertical-align:top}
+                                </style>
+                            <tr>
+                              <th>n=1949</th>
+                              <th>Predicted YES</th>
+                              <th>Predicted NO</th>
+                              <th></th>
+                            </tr>
+                            <tr>
+                              <th>Actual YES</th>
+                              <td id="tn"></td>
+                              <td id="fn"></td>
+                              <td id="npv"></td>
+                            </tr>
+                            <tr>
+                              <th>Actual NO</th>
+                              <td id="fp"></td>
+                              <td id="tp"></td>
+                              <td id="ppv"></td>
+                            </tr>
+                            <tr>
+                              <th></th>
+                              <td id="nn"></td>
+                              <td id="np"></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th></th>
+                              <td id="tnr_out"></td>
+                              <td id="tpr_out"></td>
+                              <td></td>
+                            </tr>
+                            </table>
+                            <p style="color:red;">Mean Absolute Error = 0.117  </p>
+                            <p style="color:red;">Mean Squared Error = 0.117</p>
+                            <p style="color:red;">Root Mean Squared Error = 0.342</p>
+                            
                     </div>
                 </div>
             </div>
-           
+            <br>
+            <br>
+            <br>
+            <div class="text-center">
+                <h4 class="text-center">Tuning and Evaluating the Model</h4>
+                <p>An 88% percent accuracy score is pretty good but we wanted to see whether we could improve that with some advanced techniques. Using Grid Search Cross Validation, we were able to increase our score from 88% to a whopping 93%!</p>
+                </div>
+            <div class="text-center">
+            <h5 class="text-muted center">Area Under the Curve</h5>
+            <p>Area Under the Curve or AUC represents the probability that a model ranks a positive example more highly than a radnom negative one. AUC ranges from 0 to 1. Models that are 100% right would have an AUC of 1.0 and those that are 100% wrong would have an AUC of 0.0. As you can see, our model returned am AUC of .95, suggesting that this model is highly accurate.</p>
+           <img src="assets/img/AUC.png" alt="AUC Curve" width="400" height="300" class='center'>
+       
 
        <!-- Bootstrap core JS-->
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
        <!-- Third party plugin JS-->
        <script src="https://code.highcharts.com/highcharts.js"></script>
        <script src="https://code.highcharts.com/modules/data.js"></script>
        <script src="https://code.highcharts.com/modules/exporting.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+       <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        
+        
+
        <!-- Contact form JS-->
        <script src="assets/mail/jqBootstrapValidation.js"></script>
        <script src="assets/mail/contact_me.js"></script>
