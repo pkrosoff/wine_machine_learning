@@ -179,7 +179,22 @@
                         <div class="text-center">
                         <img src="assets/img/nlp/wineprice_mean_code.jpg"/>
                         </div>
-
+                        <br>
+                        <p>
+                            Now that the data was cleaned, the Pandas data frame is converted to a PySpark data frame and follows the exact same steps as above with the exception that the binned price column is used as the input column for the String indexer.
+                        </p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/wineprice_pyspark_features.png"/>
+                        </div>
+                        <br>
+                        <p>
+                            The following steps are identical to the wine score model with the NaiveBayes and MulticlassClassificationEvaluator libraries being utilized out ultimately output a prediction of accuracy. For four out of the five binning models utilized, the accuracy prediction was over 70%.
+                        </p>
+                        <div class="text-center">
+                        <img src="assets/img/nlp/accuracy_output.png"/>
+                        </div>
+                        <br>
+                        <p>As a final note, to improve this project going forward incorporating cross validation into the model would be necessary. The current cross validation model from NaiveBayes, when ran in Google Collab required more RAM than offered by the program which caused the Multi Class cross validator to fail.</p>
 
                     </div>                  
                 </div>
